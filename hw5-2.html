@@ -1,0 +1,77 @@
+<!DOCTYPE script>
+<head>
+<style>
+html{
+	background: url(http://www.headstartonhealthyliving.com/wp-content/uploads/2014/09/Road-at-the-foot-of-the-hope-in-the-distance-try-hard-1920x1440.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.container{
+	margin: auto;
+	width: 30%;
+	border: 3px solid #ADD8E6;
+	border-radius: 8px;
+	padding: 30px;
+	 background: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSuIw5uohddhR6TIcEPS0oGijetLRfN2oJz15wMQgEVPz3psqJfyw) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.map{
+	margin: auto;
+    width: 80%;
+    padding: 10px;
+
+}
+.text{
+    width: 75%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+.b{
+	margin: auto;
+    width: 20%;
+    padding: 10px;	
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+</style>
+</head>
+<body>
+	<h1 style="color:#e61919;" align="center">Distance Caluclator</h1>
+	<div class="container">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<!-- Replace with your own Google Maps API key! -->
+<script src="http://maps.google.com/maps?file=api&v=2&key=AIzaSyA9kMASRkOAbPFdzd4u5o_F0JyXKieOSQk" type="text/javascript"></script>
+<script type="text/javascript"></script>
+<script src="script.js"></script>
+<div class= "map">
+<form id="map-form">
+  <label for="address 1" color="red"><font color="green"><b>Address 1:</b></font> </label><input type="text" class= "text" placeholder="Address 1" id="address1" /><br>
+  <label for="address 2" color="red"><font color="green"><b>Address 2:</b></font> </label><input type="text" class= "text" placeholder="Address 2" id="address2" />
+ <div class= "b">
+  <input type="submit" class="button" value="Submit" />
+  </div>
+  <h2 align="center">The distance is: <span id="mile_distance" style="color:red;">?</span> miles.</h2>
+</div>
+</div>
+</form>
+</body>

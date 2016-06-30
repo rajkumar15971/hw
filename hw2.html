@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>15971-Bouncing Ball</title>
+<style type="text/css">
+
+#myCanvas {
+   clear: both;
+   border-collapse: collapse;
+   border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h1 style="color:rgb(75, 176, 129)">Bouncing a Ball With Reverse Direction-15971</h1>
+<h4 >The color of the ball rotates between red color and blue color whenever the ball changes direction.</h4>
+<div id="container">
+   <table align="center">
+      <tr>
+         <td colspan="2">
+            <canvas id="myCanvas" width="300" height="300"></canvas>
+         </td>
+      </tr>
+      <tr align="center">
+         <td><input type="button" value="Start" onclick="fnstrtBtn()"></td>
+         <td><input type="button" value="Stop" onclick="fnstopBtn()"></td>
+      </tr>
+   </table>
+</div>
+
+<script type="text/javascript">
+   var context;
+   var dx = -2;
+   var dy = -2;
+   var y = 250;
+   var x = 100;
+   var a = "#0000ff";
+
+   var intervalTime = 10
+   var togglenumber = 1;
+   var colorCode = "#0000ff";
+
+   var boolStop = false;
+
+   // Call the function draw
+   // every #intervalTime ms
+   var setIntr = setInterval(draw, intervalTime);
+
+   // Start btn functioanlity
+   function fnstrtBtn() {
+      console.log("fnstrtBtn:");
+      if (boolStop) {
+         setIntr = setInterval(draw, intervalTime);
+         boolStop = false;
+      }
+   }
+
+   // Stop btn functioanlity
+   function fnstopBtn() {
+      console.log("fnstopBtn:");
+      clearInterval(setIntr);
+      boolStop = true
+   }
+
+   // Drawing the circle functioanlity
+   function draw() {
+      context= myCanvas.getContext('2d');
+      // To erase the old cirlces
+      context.clearRect(0,0,300,300);
+      context.beginPath();
+      context.fillStyle=a;
+   
+      // Draws a circle of radius 20 at the 
+      // coordinates (x,y) on the canvas
+      context.arc(x,y,20,0,Math.PI*2,true);
+      context.closePath();
+      context.fill();
+   
+      // Boundary Logic
+      if ( x<0 || x>300){
+         dx=-dx;
+         a="#ff0000";}
+      if ( y<0 || y>300){
+         dy=-dy;
+         a="#0000ff";}
+      x+=dx;
+      y+=dy;
+   }
+</script>
+</body>
+</html>
